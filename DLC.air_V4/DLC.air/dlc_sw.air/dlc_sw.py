@@ -37,9 +37,13 @@ def new_parental_set():
     touch(gender)
     touch(minutes_60)
     touch(nxt_button)
-    sleep(1)
+    sleep(6)
+    touch(next_icon)
+    sleep(5)
+    touch(fieldname)
     text("rikuenesiaSakitos")
     touch(nxt_button)
+new_parental_set()
     
 
 def dlc_sw():

@@ -12,7 +12,8 @@ def cekStuckDLC(timeout_menit=1): # Default jadi 1 menit
     print(f"--- MONITORING SINGKAT: {timeout_detik} detik ---")
     #coba pake JME setelah download
     while True:
-        if exists(Template("tpl1778659631079.png")):
+        target = Template("tpl1779434257906.png")
+        if exists(target):
             width, height = device().get_current_resolution()
             next_btn = (0.865 * width, 0.896 * height)
             allow_btn = (0.633 * width, 0.642 * height)
@@ -34,8 +35,10 @@ def cekStuckDLC(timeout_menit=1): # Default jadi 1 menit
         sleep(1)
         
 def dlc_ink():
+    width, height = device().get_current_resolution()
+    mig = (0.054 * width, 0.891 * height)
     sleep(5.0)
-    touch(Template(r"tpl1775628327885.png", record_pos=(-0.412, 0.168), resolution=(2400, 1080)))
+    touch(mig)
 
 dlc_ink()
 
