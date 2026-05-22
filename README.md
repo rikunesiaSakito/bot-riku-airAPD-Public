@@ -1,8 +1,10 @@
 # My Airtest
 
 a) STEP BY STEP GIT
+
 -----------------------------------STEP BY STEP GESS---------------------------------------------------
-My Airtest Project Hello there here step by step to create repository then upload it via GIT kih:
+
+Hello there here step by step to create repository then upload it via GIT kih:
 
 Create new repository until get template code.
 
