@@ -43,7 +43,7 @@ def new_parental_set():
     touch(fieldname)
     text("rikuenesiaSakitos")
     touch(nxt_button)
-new_parental_set()
+
     
 
 def dlc_sw():
