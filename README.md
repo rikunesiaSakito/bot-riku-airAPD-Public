@@ -33,6 +33,7 @@ g. git remote add origin https://github.com/rikunesiaSakito/bot-rikun-airAPD.git
 h. git push -u origin main // jika mau push selanjutnya bisa tanpa -u
 
 ----------------------------------------------Thanks for reading---------------------
+
 B) Adding Readme:
 
 a. echo "#My Airtest" > README.md // bebas
