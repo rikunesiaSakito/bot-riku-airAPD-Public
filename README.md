@@ -47,6 +47,6 @@ d. git commit -m "Add readme" // buat keterangan
 e. git push origin main // masukkan ke github
 
 --------------------------------------------------------------------------------------------------------------------------------------
-1) DLC air ---> Check whether stuck occurs or not on all DLC
+1) DLC air ---> Check whether stuck occurs or not on all DLC ---> make sure to use this script (Dino musseum must be played once - first tutorial complete (no hand tutorial).
 
 2) DLC Function_issue ---> just tested version Will not Update it!
