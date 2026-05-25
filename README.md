@@ -48,7 +48,11 @@ e. git push origin main // masukkan ke github
 
 -----------------------------------------------------------------------------------------
 
-C) How to download file on GITHUB on folder 
+C) Input DATA/PUSH from NEW PC (if you have more than 2 pcs you need to type this on new PC) 
+
+git pull origin main
+
+D) How to download file on GITHUB on folder 
 
 a) in order to download folder you must tap (code) button which has green color and download as ZIP.
 
