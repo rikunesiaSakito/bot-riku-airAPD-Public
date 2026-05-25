@@ -10,11 +10,7 @@ def cekStuckDLC(timeout_menit=1): # Default jadi 1 menit
     print(f"--- MONITORING SINGKAT: {timeout_detik} detik ---")
     #coba pake JME setelah download
     while True:
-<<<<<<< HEAD
         if exists(Template("tpl1779693235709.png")):
-=======
-        if exists(Template(r"tpl1778664787962.png", record_pos=(0.015, -0.219), resolution=(1920, 1080))):
->>>>>>> 026a6935b6e2a2a753cdcb89e30a7c6b9b1c3dc3
 
             sleep(5)
             print("Berhasil masuk dan download! DLC PASSED for STAR WARS DE LANGUAGE")
@@ -48,10 +44,6 @@ def new_parental_set():
     text("rikuenesiaSakitos")
     touch(nxt_button)
 
-<<<<<<< HEAD
-=======
-    
->>>>>>> 026a6935b6e2a2a753cdcb89e30a7c6b9b1c3dc3
 
 def dlc_sw():
     touch(Template(r"tpl1775638583740.png", record_pos=(-0.416, -0.169), resolution=(2400, 1080)))
@@ -68,13 +60,9 @@ def dlc_sw():
     sleep(3.0)
 
 dlc_sw()
-<<<<<<< HEAD
 width, height = device().get_current_resolution()
 DE_bt = (0.75 * width, 0.897* height)
 touch((0.617,0.609))
-=======
-
->>>>>>> 026a6935b6e2a2a753cdcb89e30a7c6b9b1c3dc3
 touch(Template(r"tpl1775640011605.png", record_pos=(-0.414, -0.083), resolution=(2400, 1080)))
 sleep(1.0)
 touch(Template(r"tpl1774942354699.png", record_pos=(0.309, -0.178), resolution=(2400, 1080)))
@@ -90,17 +78,9 @@ sleep(7.0)
 new_parental_set()
 touch(Template(r"tpl1774942504082.png", record_pos=(-0.412, 0.194), resolution=(2400, 1080)))
 sleep(1.0)
-<<<<<<< HEAD
 swipe((0.5, 0.8), (0.5, 0), duration=1.0) 
 sleep(2)
 touch(DE_bt)
-=======
-swipe(Template(r"tpl1774942551101.png", record_pos=(-0.03, 0.012), resolution=(2400, 1080)), vector=[-0.0126, -0.3643])
-sleep(1.0)
-swipe(Template(r"tpl1774942593279.png", record_pos=(-0.115, -0.019), resolution=(2400, 1080)), vector=[-0.0187, -0.4041])
-sleep(1.0)
-touch(Template(r"tpl1778665492280.png", record_pos=(0.265, 0.014), resolution=(1920, 1080)))
->>>>>>> 026a6935b6e2a2a753cdcb89e30a7c6b9b1c3dc3
 sleep(1.0)
 touch(Template(r"tpl1774942681303.png", record_pos=(-0.412, -0.189), resolution=(2400, 1080)))
 sleep(3.0)
@@ -120,7 +100,3 @@ cekStuckDLC(1)
 wait(Template(r"tpl1774942878956.png", record_pos=(0.451, 0.17), resolution=(2400, 1080)))
 touch(Template(r"tpl1774942894676.png", record_pos=(-0.415, -0.185), resolution=(2400, 1080)))
 sleep(5.0)
-<<<<<<< HEAD
-=======
-
->>>>>>> 026a6935b6e2a2a753cdcb89e30a7c6b9b1c3dc3
