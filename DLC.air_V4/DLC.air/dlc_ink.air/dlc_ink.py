@@ -58,12 +58,16 @@ def search_ink():
             break # Keluar dari loop karena sudah berhasil pencet
 
         else:
+<<<<<<< HEAD
             
+=======
+>>>>>>> 026a6935b6e2a2a753cdcb89e30a7c6b9b1c3dc3
             print("Belum ketemu, swipe ke kiri untuk mencari...")
             swipe((0.8, 0.39), (0.2, 0.39), duration=1.0)
             sleep(3)
 search_ink() 
 
+<<<<<<< HEAD
 def spamming():
     width, height = device().get_current_resolution()
     next_bt = (0.926 * width,0.876 * height)
@@ -75,6 +79,11 @@ sleep(8)
 touch(Template(r"tpl1775628647273.png", record_pos=(-0.221, -0.182), resolution=(2400, 1080)))
 sleep(5)
 spamming()
+=======
+sleep(1.0)
+touch(Template(r"tpl1775628647273.png", record_pos=(-0.221, -0.182), resolution=(2400, 1080)))
+sleep(45.0)
+>>>>>>> 026a6935b6e2a2a753cdcb89e30a7c6b9b1c3dc3
 wait(Template(r"tpl1775628961531.png", record_pos=(-0.308, -0.183), resolution=(2400, 1080)))
 width, height = device().get_current_resolution()
 hats_menu = (0.669 * width, 0.351 * height)
