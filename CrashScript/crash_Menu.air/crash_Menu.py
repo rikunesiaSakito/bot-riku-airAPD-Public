@@ -14,6 +14,7 @@ def cekCrash():
     MATTERMOST_URL = "https://chat.gameloft.org/hooks/4sd5gz86a7n73e8bi5cpsde7tr"
     _app = "com.ferrero.applayduGP"
     
+    #shell("am force-stop com.ferrero.applayduGP")
     result = shell("dumpsys window | grep mCurrentFocus") #bikin variable cek jika di homescreen nantinya variable 
     #pastikan pake strip setiap kali menggunakan sheel untuk membersihkan kiri dan kanan text.
     if "launcher" in result.lower():
@@ -21,19 +22,40 @@ def cekCrash():
         dev_model = shell("getprop ro.product.model").strip() # ambil model hape
         dev_firmware = shell ("getprop ro.build.version.release").strip() # ambil firmware
         print("Saat ini Hape Anda sedang berada di homescreen, kemungkinan CRASH!!" + dev_merk + " " +  dev_model + " Firmware  " + dev_firmware)
-        #percobaan bikin error pembagian dengan 0 atau bikin saja ndak ada gambar
-        try:
-            1/0
-        except Exception:
-            log_asli = traceback.format_exc()
-        if "NoneType" in log_asli or log_asli.strip() == "None: None" or log_asli.strip() == "None":
-                log_bersih_tabel = f"Bot murni stuck/diam selama {durasi:.1f} detik."
+        # 28 may 2026 - parameter logcat shell jika menangkap error ganti E bukan D
+        logAndro = shell('logcat -d -v brief *:D | grep com.ferrero.applayduGP | tail -n 5')
+        log_aman = logAndro.replace("\\", "/").replace('"', "'").replace("|", "/")
+        log_aman = log_aman.replace("[", "(").replace("]", ")")
+        
+        # Potong per baris agar tidak melar ke samping
+        baris_log = log_aman.split("\n")
+        baris_rapi = []
+        for b in baris_log:
+            if b.strip():
+                potong = b.strip()[:80] + "..." if len(b.strip()) > 80 else b.strip()
+                baris_rapi.append(potong)
+        
+        log_bersih_tabel = "<br>".join(baris_rapi)
+        
+        # Bungkus hasil akhir dengan satu petik terbalik
+        if log_bersih_tabel.strip() != "":
+            log_bersih_tabel = f"`{log_bersih_tabel}`"
         else:
-            log_aman_path = log_asli.replace("\\", "/")
+            log_bersih_tabel = "Tidak ini bukan crash (Logcat bersih)"
+        
+        #percobaan bikin error pembagian dengan 0 atau bikin saja ndak ada gambar
+        #try:
+            #1/0
+       # except Exception:
+            #log_asli = traceback.format_exc()
+       # if "NoneType" in log_asli or log_asli.strip() == "None: None" or log_asli.strip() == "None":
+                #log_bersih_tabel = f"Bot murni stuck/diam selama {durasi:.1f} detik."
+        #else:
+            #log_aman_path = log_asli.replace("\\", "/")
                 # 2. Ganti tanda petik dua (") menjadi petik satu (') agar f-string tidak bocor
-            log_tanpa_petik = log_aman_path.replace('"', "'")
+            #log_tanpa_petik = log_aman_path.replace('"', "'")
                 # 3. Ganti enter (\n) menjadi <br> agar tetap di dalam kotak tabel
-            log_bersih_tabel = log_tanpa_petik.replace("\n", "<br>")
+            #log_bersih_tabel = log_tanpa_petik.replace("\n", "<br>")
                 
         payload = {
             "username": "RikuCrashBOT",
@@ -59,7 +81,6 @@ def cekCrash():
         return True # Masih di launcher - agar tidak sembarang clikc
         
     else:
-        waktu_mulai_stuck = None
         # print("Aman: Masih di dalam Game")
         return False
 # seperti biasa buat dictionary dulu, biar gampang modif kalo ada icon baru di coordinat lain
